@@ -9,13 +9,14 @@ nav .logo {
   font-family: 'Bungee';
   font-size: 1.2em;
   padding: 1.5em 1.5em 0 1.5em ;
+  flex-grow: 1;
 }
-nav .new_tweet{
+nav .new_tweet_link{
   padding: 1.5em 1.5em 0 1.5em ;
-  margin-left: auto;
 }
 
 nav .fas{
-  
+  margin-left: 3.5em;
+  cursor: pointer;
   color: red;
 }
