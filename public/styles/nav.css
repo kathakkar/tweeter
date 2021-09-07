@@ -4,6 +4,8 @@ nav {
   height: 120px;
   width: 100%;
   display: flex;
+  position: sticky;
+  top: 0;
 }
 nav .logo {
   font-family: 'Bungee';
