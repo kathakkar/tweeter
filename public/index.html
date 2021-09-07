@@ -37,13 +37,13 @@
       <span class="logo">TWEETER</span>
       <span class="new_tweet_link"><b>Write</b> a new tweet<br><i class="fas fa-angle-double-down"></i></span>
     </nav>
-    <header>
-    <div>
-      <img src="/images/profile-hex.png"> 
-    </div>
-    <div>
-      <h2>Your Name</h2>
-    </div>
+  <header id="page-header">
+      <div>
+        <img src="/images/profile-hex.png"> 
+      </div>
+      <div>
+        <h2>Your Name</h2>
+      </div>
   </header>
   
     <main id="container">
@@ -58,7 +58,15 @@
         </form>     
       </section>
       <section id="tweet-container">
-
+        <article class="tweet">
+          <header>
+            <span id="tweet_img"><img src="images/profile-hex.png"></span>
+            <span id="tweet_username">Khushbu</span>
+            <span id="tweet_user_id"><b>@khushbuthakkar</b></span></header>
+          <main><b>Hello world!!!</b></main>
+          <footer><Span id="tweet_timespan"><h6>10 days ago</h6></Span>
+            <span id="tweet_icons"><i class="fas fa-flag"></i>&nbsp;&nbsp;<i class="fas fa-retweet"></i>&nbsp;&nbsp;<i class="fas fa-heart"></i></span></footer>
+        </article>
       </section>
     </main>
   </body>
