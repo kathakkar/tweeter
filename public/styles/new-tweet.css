@@ -1,0 +1,36 @@
+#tweet-text {
+  border:none; /* Get rid of the browser's styling */
+  border-bottom:3px solid #545149; /* Add your own border */
+  background-color: #f4f1ec;
+  width: 100%;
+}
+
+#tweet-text:focus-visible{
+  outline:none;
+}
+/* .new-tweet{
+text-align: justify;
+  margin-top: 35px;
+} */
+/* .new-tweet form {
+  flex-grow: 1;
+} */
+.tweet-btn button{
+  background-color: #4056A1;
+    color: #fff;
+  
+    /* font-weight: 400; */
+    font-weight: 600;
+
+}
+.tweet-btn{
+  flex-grow: 1;
+}
+.tweet-btn-sec{
+  display: flex;
+  margin-top: 20px;
+}
+.counter output{
+  color: #545149;
+  font-weight: 600;
+}
