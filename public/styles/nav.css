@@ -1,0 +1,22 @@
+nav {
+  background-color: #4056A1;
+  color: #fff;
+  height: 120px;
+  width: 100%;
+  display: flex;
+}
+nav .logo {
+  font-family: 'Bungee';
+  font-size: 1.2em;
+  padding: 1.5em 1.5em 0 1.5em ;
+  flex-grow: 2;
+
+}
+nav span{
+  padding: 1.5em 1.5em 0 1.5em ;
+}
+
+nav .fas{
+  padding: 5px 0 0 3.5em;
+  color: red;
+}
