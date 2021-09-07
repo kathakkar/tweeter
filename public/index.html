@@ -16,9 +16,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- App CSS -->
+    <!-- <link rel="stylesheet" href="/styles/reset.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -32,7 +34,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">TWEETER</span>
-      <span class="new_tweet"><b>Write</b> a new tweet<br><i class="fas fa-angle-double-down"></i></span>
+      <span class="new_tweet_link"><b>Write</b> a new tweet<br><i class="fas fa-angle-double-down"></i></span>
     </nav>
     <header>
     <div>
@@ -44,15 +46,16 @@
   </header>
   
     <main class="container">
-      <p>Think classic lorem ipsum is passé? Give your next project a bit more edge with these funny and unique text generators.
-
-        Think classic lorem ipsum is passé? Give your next project a bit more edge with these funny and unique text generators.
-
-        Think classic lorem ipsum is passé? Give your next project a bit more edge with these funny and unique text generators.
-
-        Think classic lorem ipsum is passé? Give your next project a bit more edge with these funny and unique text generators.
-
-      </p>
+      <section class="new-tweet">
+        <form method="POST" action="/tweets/">
+          <h2>What are you humming about?</h2>
+          <input type="text" placeholder="" id="tweet-text">
+          <div class="tweet-btn-sec">
+            <div class="tweet-btn"><button type="submit" >TWEET</button></div>
+            <div class="counter"><output name="counter"  for="tweet-text">140</output></div>  
+          </div>
+        </form>     
+      </section>
     </main>
   </body>
 </html>
