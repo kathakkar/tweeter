@@ -44,6 +44,7 @@ const createTweetElement = function (obj) {
   const $main = $('<main>');
   const $b = $('<b>').text(obj['content']['text']);
 
+  
   $main.append($b);
 
   const $footer = $('<footer>');
