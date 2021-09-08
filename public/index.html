@@ -49,9 +49,9 @@
   
     <main id="container">
       <section id="new-tweet">
-        <form method="POST" action="/tweets/">
+        <form method="post" action="/tweets/">
           <h2>What are you humming about?</h2>
-          <textarea type="text" placeholder="" id="tweet-text"></textarea>
+          <textarea name="text" placeholder="" id="tweet-text"></textarea>
           <div class="tweet-btn-sec">
             <div class="tweet-btn"><button type="submit">TWEET</button></div>
             <div class="counter"><output id="tweet-counter"  for="tweet-text">0</output></div>  
