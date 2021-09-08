@@ -25,8 +25,19 @@ $(document).ready(function() {
   const $form = $('#new-tweet form');
   $form.on('submit', function(event) {
     event.preventDefault();
-    const serializedData = $(this).serialize(); 
-    postData(serializedData);
+    const $tweet_val = $('#tweet-text').val();
+    if($tweet_val.trim() === ""){
+      alert('Tweet content is empty. Please enter content and retweet');
+    } else if($tweet_val.length > 140){
+      alert('Tweet content length is too long. Please enter content < 140 characters');
+    } else {
+      const serializedData = $(this).serialize(); 
+      postData(serializedData);
+      $('#tweet-text').val('');
+      $('#tweet-counter').val(0);
+      $('#tweet-counter').css("color", "#545149");
+    }
+    
   });
 
 
@@ -44,7 +55,7 @@ const createTweetElement = function (obj) {
   const $main = $('<main>');
   const $b = $('<b>').text(obj['content']['text']);
 
-  
+
   $main.append($b);
 
   const $footer = $('<footer>');
