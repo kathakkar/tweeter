@@ -5,7 +5,6 @@
  */
 
 $(document).ready(function() {
-  
   const loadTweets = function () {
     $.getJSON('/tweets/', function(tweetsJSON){
       renderTweets(tweetsJSON);
@@ -27,15 +26,22 @@ $(document).ready(function() {
     event.preventDefault();
     const $tweet_val = $('#tweet-text').val();
     if($tweet_val.trim() === ""){
-      alert('Tweet content is empty. Please enter content and retweet');
+      $('#tweet_error_msg').empty();
+      $('#tweet_error').show();
+      $('#tweet_error_msg').append('Tweet content is empty, Please enter content and retweet.');
     } else if($tweet_val.length > 140){
-      alert('Tweet content length is too long. Please enter content < 140 characters');
+      $('#tweet_error_msg').empty();
+      $('#tweet_error').show();
+      $('#tweet_error_msg').append('Tweet content length is too long, Please enter content < 140 characters.');
     } else {
       const serializedData = $(this).serialize(); 
       postData(serializedData);
       $('#tweet-text').val('');
       $('#tweet-counter').val(0);
+      $("#max_limit").val(0);
       $('#tweet-counter').css("color", "#545149");
+      $('#tweet_error_msg').empty();
+      $('#tweet_error').hide();
     }
     
   });
@@ -81,6 +87,7 @@ const createTweetElement = function (obj) {
 }
 
 const renderTweets = function (tweets) {
+  $('#tweet-counter').val(0);
   $('#tweet-container').empty();
   for(let tweet in tweets){
     const $tweet = createTweetElement(tweets[tweet]);
