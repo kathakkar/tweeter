@@ -37,7 +37,7 @@ $(document).ready(function() {
       const serializedData = $(this).serialize(); 
       postData(serializedData);
       $('#tweet-text').val('');
-      $('#tweet-counter').val(0);
+      $('#tweet-counter').val(140);
       $("#max_limit").val(0);
       $('#tweet-counter').css("color", "#545149");
       $('#tweet_error_msg').empty();
@@ -87,7 +87,7 @@ const createTweetElement = function (obj) {
 }
 
 const renderTweets = function (tweets) {
-  $('#tweet-counter').val(0);
+  $('#tweet-counter').val(140);
   $('#tweet-container').empty();
   for(let tweet in tweets){
     const $tweet = createTweetElement(tweets[tweet]);
