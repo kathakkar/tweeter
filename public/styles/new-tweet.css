@@ -44,6 +44,11 @@ article.tweet {
   margin-bottom: 20px;
 }
 
+article.tweet:hover {
+  box-shadow: 5px 10px darkgrey;
+}
+
+
 article.tweet header {
   display: flex;
   margin: 20px;
@@ -58,6 +63,7 @@ article.tweet footer {
 article.tweet main {
   margin: 20px;
 }
+
 
 
 #tweet_username {
