@@ -97,3 +97,13 @@ article.tweet main {
 #tweet_icons .fas:hover{
   color: darkgoldenrod;
 }
+
+#tweet_error {
+  color: red;
+  padding: 10px;
+  font-weight: 600;
+}
+
+#tweet_error > i {
+  margin-right: 10px;
+}
