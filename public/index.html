@@ -51,10 +51,11 @@
       <section id="new-tweet">
         <form method="post" action="/tweets/">
           <h2>What are you humming about?</h2>
+          <div id="tweet_error" hidden><i class="fas fa-exclamation-triangle"></i><span id="tweet_error_msg"></span></div>
           <textarea name="text" placeholder="" id="tweet-text"></textarea>
           <div class="tweet-btn-sec">
             <div class="tweet-btn"><button type="submit">TWEET</button></div>
-            <div class="counter"><output id="tweet-counter"  for="tweet-text">0</output></div>  
+            <div class="counter"><input type="text" hidden id="max_limit" value="0"><output id="tweet-counter"  for="tweet-text">0</output></div>  
           </div>
         </form>     
       </section>
