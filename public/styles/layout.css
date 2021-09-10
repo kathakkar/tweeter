@@ -23,18 +23,3 @@ body {
    width: 90%;
    margin: 0 auto;
  }
-
-/* Media queries */
-@media screen and (min-width: 1075px) {
-  #header-and-formcontainer {
-    display: flex;
-  }
-  #page-header {
-    flex: 0 1 30%;
-    margin: 50px;
-    border-radius: 60px;
-  }
-  #container {
-    margin: 50px;
-  }
-}
