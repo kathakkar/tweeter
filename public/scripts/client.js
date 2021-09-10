@@ -19,6 +19,7 @@ $(document).ready(function() {
     if(errMsg.trim() !== '') {
       $('#tweet_error_msg').empty();
       $('#tweet_error').show();
+      $('#tweet_error_msg').slideDown('slow');
       $('#tweet_error_msg').append(errMsg);
     }
     else {
