@@ -5,10 +5,11 @@
   }
   #page-header {
     flex: 0 1 30%;
-    margin: 50px;
+    margin: 30px;
     border-radius: 60px;
+    padding: 20px;
   }
   #container {
-    margin: 50px;
+    margin: 30px;
   }
 }
