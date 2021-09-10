@@ -4,47 +4,75 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// DOM Loads
+
 $(document).ready(function() {
-  const loadTweets = function () {
-    $.getJSON('/tweets/', function(tweetsJSON){
-      renderTweets(tweetsJSON);
-        }).fail(function(){
-            console.log("An error has occurred.");
-    });
-  }
+
+  //Tweets loads
   loadTweets();
 
-  const postData = function (obj) {
-    $.post('/tweets/', obj, (response) => {
-      console.log(response)
-      loadTweets();
-    })
-  }
-
-  const $form = $('#new-tweet form');
-  $form.on('submit', function(event) {
+  //Form submit
+  $('#tweet_form').on('submit', function(event) {
     event.preventDefault();
     const $tweet_val = $('#tweet-text').val();
-    if($tweet_val.trim() === ""){
+    const errMsg = validateTweet($tweet_val);
+    if(errMsg.trim() !== '') {
       $('#tweet_error_msg').empty();
       $('#tweet_error').show();
-      $('#tweet_error_msg').append('Tweet content is empty, Please enter content and retweet.');
-    } else if($tweet_val.length > 140){
-      $('#tweet_error_msg').empty();
-      $('#tweet_error').show();
-      $('#tweet_error_msg').append('Tweet content length is too long, Please enter content < 140 characters.');
-    } else {
-      const serializedData = $(this).serialize(); 
-      postData(serializedData);
-      $('#tweet-text').val('');
-      $('#tweet-counter').val(140);
-      $("#max_limit").val(0);
-      $('#tweet-counter').css("color", "#545149");
-      $('#tweet_error_msg').empty();
-      $('#tweet_error').hide();
+      $('#tweet_error_msg').append(errMsg);
     }
-    
+    else {
+      const serializedData = $(this).serialize(); 
+      postTweet(serializedData);
+      resetVariables();
+    }
   });
+});
+
+//Functions declarations
+
+const loadTweets = function () {
+  $.getJSON('/tweets/', function(tweetsJSON){
+    renderTweets(tweetsJSON);
+      }).fail(function(){
+          console.log("An error has occurred.");
+  });
+}
+
+const validateTweet = function (textValue) {
+  let errMsg = '';
+  if(textValue.trim() === ""){
+    errMsg = "Tweet content is empty, Please enter content and retweet.";
+  } else if(textValue.length > 140){
+    errMsg = "Tweet content length is too long, Please enter content < 140 characters.";
+  }
+  return errMsg;
+}
+
+const resetVariables = function () {
+  $('#tweet-text').val('');
+  $('#tweet-counter').val(140);
+  $("#max_limit").val(0);
+  $('#tweet-counter').css("color", "#545149");
+  $('#tweet_error_msg').empty();
+  $('#tweet_error').hide();
+} 
+
+const postTweet = function (obj) {
+  $.post('/tweets/', obj, (response) => {
+    console.log(response)
+    loadTweets();
+  })
+}
+
+const renderTweets = function (tweets) {
+  $('#tweet-counter').val(140);
+  $('#tweet-container').empty();
+  for(let tweet in tweets){
+    const $tweet = createTweetElement(tweets[tweet]);
+    $('#tweet-container').prepend($tweet);
+  }
+}
 
 
 const createTweetElement = function (obj) {
@@ -65,36 +93,16 @@ const createTweetElement = function (obj) {
   $main.append($b);
 
   const $footer = $('<footer>');
-  const $spanTimeSpan = $('<span>').attr('id','tweet_timespan').text(time_ago_count);
+  const $spanTimeSpan = $('<span>').attr('id','tweet_timespan');
+  const $h6 = $('<h6>').text(time_ago_count);
+
+  $spanTimeSpan.append($h6);
+
   const $spanIcons = $('<span>').attr('id','tweet_icons').html('<i class="fas fa-flag"></i>&nbsp;&nbsp;<i class="fas fa-retweet"></i>&nbsp;&nbsp;<i class="fas fa-heart"></i>');
   
   $footer.append($spanTimeSpan, $spanIcons);
 
   $article.append($header, $main, $footer);
 
-
-  // let markUp = `<article class="tweet">
-  //             <header>  
-  //             <span id="tweet_img"><img src="${obj['user']['avatars']}"></span>
-  //             <span id="tweet_username">${obj['user']['name']}</span>
-  //             <span id="tweet_user_id"><b>${obj['user']['handle']}</b></span></header>
-  //             <main><b>${obj['content']['text']}</b></main>
-  //             <footer>
-  //             <span id="tweet_timespan"><h6>${time_ago_count}</h6></Span>
-  //             <span id="tweet_icons"><i class="fas fa-flag"></i>&nbsp;&nbsp;<i class="fas fa-retweet"></i>&nbsp;&nbsp;<i class="fas fa-heart"></i></span>
-  //             </footer></article>`;
   return $article;
 }
-
-const renderTweets = function (tweets) {
-  $('#tweet-counter').val(140);
-  $('#tweet-container').empty();
-  for(let tweet in tweets){
-    const $tweet = createTweetElement(tweets[tweet]);
-    $('#tweet-container').prepend($tweet);
-  }
-}
-
-});
-
-
