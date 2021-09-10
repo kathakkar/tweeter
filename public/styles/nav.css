@@ -1,3 +1,4 @@
+/* Top navigation formatting */
 nav {
   background-color: #4056A1;
   color: #fff;
@@ -7,17 +8,16 @@ nav {
   position: sticky;
   top: 0;
 }
-nav .logo {
+nav > .logo {
   font-family: 'Bungee';
   font-size: 1.2em;
   padding: 1.5em 1.5em 0 1.5em ;
   flex-grow: 1;
 }
-nav .new_tweet_link{
+nav > .new_tweet_link{
   padding: 1.5em 1.5em 0 1.5em ;
 }
-
-nav .fas{
+nav > .new_tweet_link > .fas{
   margin-left: 3.5em;
   cursor: pointer;
   color: red;
