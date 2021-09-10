@@ -11,6 +11,10 @@ $(document).ready(function() {
   //Tweets loads
   loadTweets();
 
+  //Hide tweet form on DOM load
+  $('#new-tweet').hide();
+
+  
   //Form submit
   $('#tweet_form').on('submit', function(event) {
     event.preventDefault();
@@ -18,8 +22,7 @@ $(document).ready(function() {
     const errMsg = validateTweet($tweet_val);
     if(errMsg.trim() !== '') {
       $('#tweet_error_msg').empty();
-      $('#tweet_error').show();
-      $('#tweet_error_msg').slideDown('slow');
+      $('#tweet_error').show(500);
       $('#tweet_error_msg').append(errMsg);
     }
     else {
@@ -28,9 +31,20 @@ $(document).ready(function() {
       resetVariables();
     }
   });
+
+  // Hide and Show tweet form on composer button click
+  $('.new_tweet_link  > .fa-angle-double-down').on('click',() => {
+    $('#new-tweet').toggle(500);
+    $('#tweet-text').focus();
+  });
+
 });
 
 //Functions declarations
+
+const toggleButton = function(){
+  $('.fa-angle-double-down').toggle();
+}
 
 const loadTweets = function () {
   $.getJSON('/tweets/', function(tweetsJSON){
