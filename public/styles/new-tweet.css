@@ -4,6 +4,7 @@
   border-bottom:1px solid #545149; /* Add your own border */
   background-color: #f4f1ec;
   width: 100%;
+  font-weight: 600;
 }
 #tweet-text:focus-visible{
   outline:none;
