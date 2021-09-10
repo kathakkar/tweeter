@@ -1,115 +1,92 @@
+/* Formating Tweet Form */
 #tweet-text {
   border:none; /* Get rid of the browser's styling */
-  border-bottom:3px solid #545149; /* Add your own border */
+  border-bottom:1px solid #545149; /* Add your own border */
   background-color: #f4f1ec;
   width: 100%;
 }
-
 #tweet-text:focus-visible{
   outline:none;
 }
-/* .new-tweet{
-text-align: justify;
-  margin-top: 35px;
-} */
-/* .new-tweet form {
-  flex-grow: 1;
-} */
-.tweet-btn button{
-  background-color: #4056A1;
-    color: #fff;
-  
-    /* font-weight: 400; */
-    font-weight: 600;
-
-}
-.tweet-btn {
-  flex-grow: 1;
-}
-.tweet-btn-sec {
+#tweet-btn-sec {
   display: flex;
   margin-top: 20px;
 }
-.counter output {
+#tweet-btn > button{
+  background-color: #4056A1;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#tweet-btn {
+  flex-grow: 1;
+}
+#tweet-counter {
   color: #545149;
   font-weight: 600;
 }
 
-
 /* Formating tweets */
-
 article.tweet {
-  border: 3px solid;
+  border: 1px solid;
   margin-top: 20px;
   margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 10px;
 }
-
 article.tweet:hover {
-  box-shadow: 5px 10px darkgrey;
+  box-shadow: 5px 10px #545149;
 }
-
-
 article.tweet header {
   display: flex;
   margin: 20px;
 }
-
 article.tweet footer {
   display: flex;
-  border-top: 3px solid;
+  border-top: 1px solid;
   margin: 20px;
 }
-
 article.tweet main {
   margin: 20px;
 }
-
-
-
 #tweet_username {
   flex-grow: 1;
   align-self: center;
 }
-
 #tweet_user_id {
   align-self: center;
 }
-
 #tweet_img img {
   width: auto;
-  height: 80px;
+  height: 60px;
+  margin-right: 10px;
 }
-
 #tweet_timespan {
   flex-grow: 1;
   align-self: center;
   margin-top: 10px;
 }
-
-#tweet_timespan h6{
+#tweet_timespan > h6{
   margin: 0;
 }
-
 #tweet_icons {
   align-self: center;
   margin-top: 10px;
 }
-
-#tweet_icons .fas {
+#tweet_icons > .fas {
   color: #4056A1;
   cursor: pointer;
 }
-
-#tweet_icons .fas:hover{
+#tweet_icons > .fas:hover{
   color: darkgoldenrod;
 }
-
 #tweet_error {
   color: red;
   padding: 10px;
   font-weight: 600;
 }
-
 #tweet_error > i {
   margin-right: 10px;
 }
