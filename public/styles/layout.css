@@ -10,10 +10,7 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
+/*  Global layout stuff */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -21,11 +18,23 @@ body {
   font-size: 24px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
+/* Additional CSS can be defined below or in other CSS files, as per instructions */
  #container {
    width: 90%;
    margin: 0 auto;
  }
+
+/* Media queries */
+@media screen and (min-width: 1075px) {
+  #header-and-formcontainer {
+    display: flex;
+  }
+  #page-header {
+    flex: 0 1 30%;
+    margin: 50px;
+    border-radius: 60px;
+  }
+  #container {
+    margin: 50px;
+  }
+}
