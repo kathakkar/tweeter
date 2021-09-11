@@ -8,10 +8,12 @@
   background-color: #f0f0f0;
   background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
 }
+
 #page-header img {
   height: 90%;
   width: auto;
 }
+
 #page-header h2 {
   font-size: 1.8rem;
 }
