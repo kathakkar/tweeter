@@ -3,12 +3,14 @@
   #header-and-formcontainer {
     display: flex;
   }
+
   #page-header {
     flex: 0 1 30%;
     margin: 30px;
     border-radius: 60px;
     padding: 20px;
   }
+
   #container {
     margin: 30px;
   }
