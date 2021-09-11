@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,12 +15,12 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-family:'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-size: 24px;
 }
 
 /* Additional CSS can be defined below or in other CSS files, as per instructions */
- #container {
-   width: 90%;
-   margin: 0 auto;
- }
+#container {
+  width: 90%;
+  margin: 0 auto;
+}
