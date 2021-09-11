@@ -2,7 +2,7 @@
 Tweeter is a single page application that allows user to post custom tweets.
 
 ## Frontend Tools 
-HTML, CSS, jQuery, JS, AJAX as frontend 
+HTML, CSS, SASS, jQuery, JS, AJAX as frontend 
 
 ## Backend Tools 
 Nodejs, Express, Object as memory database. 
