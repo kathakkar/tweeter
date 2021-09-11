@@ -8,14 +8,14 @@
 
 $(document).ready(function() {
 
-  //Tweets loads
+  // Tweets loads
   loadTweets();
 
-  //Hide tweet form on DOM load
+  // Hide tweet form on DOM load
   $('#new-tweet').hide();
 
   
-  //Form submit
+  // Form submit
   $('#tweet_form').on('submit', function(event) {
     event.preventDefault();
     const $tweet_val = $('#tweet-text').val();
@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 });
 
-//Functions declarations
+// Functions declarations
 
 const toggleButton = function(){
   $('.fa-angle-double-down').toggle();
@@ -49,8 +49,8 @@ const toggleButton = function(){
 const loadTweets = function () {
   $.getJSON('/tweets/', function(tweetsJSON){
     renderTweets(tweetsJSON);
-      }).fail(function(){
-          console.log("An error has occurred.");
+  }).fail(function(){
+    console.log("An error has occurred.");
   });
 }
 
@@ -68,14 +68,15 @@ const resetVariables = function () {
   $('#tweet-text').val('');
   $('#tweet-counter').val(140);
   $("#max_limit").val(0);
-  $('#tweet-counter').css("color", "#545149");
+  $('#tweet-counter').addClass('counterGreyClass');
+  $('#tweet-counter').removeClass('counterRedClass');
   $('#tweet_error_msg').empty();
   $('#tweet_error').hide();
 } 
 
 const postTweet = function (obj) {
   $.post('/tweets/', obj, (response) => {
-    console.log(response)
+    console.log(response);
     loadTweets();
   })
 }
@@ -91,7 +92,7 @@ const renderTweets = function (tweets) {
 
 
 const createTweetElement = function (obj) {
-  let time_ago_count = timeago.format(obj["created_at"]);
+  const time_ago_count = timeago.format(obj["created_at"]);
 
   const $article = $('<article>').addClass('tweet');
   const $header = $('<header>');
