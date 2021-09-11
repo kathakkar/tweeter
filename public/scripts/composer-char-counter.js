@@ -16,8 +16,9 @@ $(document).ready(function() {
     }
   });
   
+  //Character count on backpace/delete
   $('#tweet-text').on('keydown', function(event) {
-    if (event.keyCode == 46 || event.keyCode == 8) 
+    if (event.keyCode === 46 || event.keyCode === 8) 
     {
       if(Number($('#tweet-counter').val()) < max_limit){
         resultCount = Number($('#tweet-counter').val()) + 1;
