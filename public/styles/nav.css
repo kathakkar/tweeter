@@ -8,26 +8,27 @@ nav {
   position: sticky;
   top: 0;
 }
-nav > .logo {
-  font-family: 'Bungee';
+nav .logo {
+  font-family: "Bungee";
   font-size: 1.2em;
-  padding: 1.5em 1.5em 0 1.5em ;
+  padding: 1.5em 1.5em 0 1.5em;
   flex-grow: 1;
 }
-nav > .new_tweet_link{
-  padding: 1.5em 1.5em 0 1.5em ;
+nav .new_tweet_link {
+  padding: 1.5em 1.5em 0 1.5em;
 }
-nav > .new_tweet_link > .fas{
+nav .new_tweet_link .fas {
   margin-left: 3.5em;
   cursor: pointer;
   color: red;
   animation: slide 1s ease-in-out infinite;
 }
+nav .new_tweet_link .fas:hover {
+  animation-play-state: paused;
+}
+
 @keyframes slide {
   50% {
     transform: translate(0, 10px);
   }
-}
-nav > .new_tweet_link > .fas:hover {
-  animation-play-state: paused;
 }
