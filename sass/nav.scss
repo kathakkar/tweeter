@@ -1,0 +1,38 @@
+/* Top navigation formatting */
+$background: #4056A1;
+$nav_color: #fff;
+
+
+nav {
+  background-color: $background;
+  color: $nav_color;
+  height: 120px;
+  width: 100%;
+  display: flex;
+  position: sticky;
+  top: 0;
+  .logo {
+    font-family: 'Bungee';
+    font-size: 1.2em;
+    padding: 1.5em 1.5em 0 1.5em ;
+    flex-grow: 1;
+  }
+  .new_tweet_link{
+    padding: 1.5em 1.5em 0 1.5em ;
+    .fas{
+      margin-left: 3.5em;
+      cursor: pointer;
+      color: red;
+      animation: slide 1s ease-in-out infinite;
+    }
+    .fas:hover {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes slide {
+  50% {
+    transform: translate(0, 10px);
+  }
+}
