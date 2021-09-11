@@ -9,6 +9,8 @@
     margin: 30px;
     border-radius: 60px;
     padding: 20px;
+    position: sticky;
+    top: 150px;
   }
 
   #container {
